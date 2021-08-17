@@ -133,7 +133,7 @@ There is one little tweak to webserver configuration we need to do for Drupal to
 </Directory>
 ```
 
-Change `AllowOverride **None**`  to say  `AllowOverride ``**All**`
+Change `AllowOverride None`  to say  `AllowOverride All`
 
 Of course, we need to restart the webserver for this change to take effect:  `systemctl restart httpd`.
 
@@ -239,4 +239,5 @@ From there, you can use the tools we installed (or any others you might want to 
 # Credits
 
 Source image from https://unsplash.com/photos/t8a7Cg17W1k
+
 Database dump from an old bot that ran on irc.zanet.net
