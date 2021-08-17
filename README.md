@@ -236,6 +236,8 @@ Once you have those running, wait a minute or two for load to build up, and then
 
 From there, you can use the tools we installed (or any others you might want to experiment with) to investigate the “problems” on the system!
 
+Remember that if things ever get too slow for you, you can kill the problem scripts by removing the `/opt/puzzleserver-main/scripts/*running` files!
+
 # Credits
 
 Source image from https://unsplash.com/photos/t8a7Cg17W1k
