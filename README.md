@@ -13,7 +13,8 @@ Two things to note:
 1. When you launch a new instance, you will be asked to select an Amazon Machine Image (AMI).  Choose “Amazon Linux 2 AMI”.
 2. Most of the other question, you can accept the defaults, but when you get to “Step 6: Configure Security Group”, make sure that you add HTTP and HTTPS rules for your server, to allow you to view the website:
 
-[Image: image.png]
+![EC2 Security Configuration](data/security-config.png)
+
 Once you have launched your EC2 instance, it will take a few minutes to initialize.  When it is fully launched, find the “public IP address” - you will use this to SSH into your server.
 
 Once you are into the server, we can go about setting up the software we are going to “troubleshoot”.
@@ -26,10 +27,10 @@ Go to the `/tmp` directory and download the bundle of my scripts and test data, 
 
 
 ```
-`cd ``/``tmp`
-`wget https://github.com/vhata/puzzleserver/archive/refs/heads/main.zip
+cd /tmp
+wget https://github.com/vhata/puzzleserver/archive/refs/heads/main.zip
 cd /opt
-unzip /tmp/main.zip`
+unzip /tmp/main.zip
 ```
 
 This will leave the scripts and data in a directory called `/opt/puzzleserver-main`, which we can use later.
@@ -150,8 +151,13 @@ Query OK, 0 rows affected (0.01 sec)
 
 Now, in your browser, open the IP address of your EC2 instance.  If all goes well, you should see something like this:
 
-[Image: image.png]Choose your language, and then on the next step, select the demo site:
-[Image: image.png]When you get to the “Verify requirements” step, you will probably get a warning about PHP OPcode caching not being enabled.  We’re not going to do this, because we specifically don’t want our website to behave well, for the purposes of the exercise.
+![Drupal homepage](data/drupal-home.png)
+
+Choose your language, and then on the next step, select the demo site:
+
+![Demo site selection](data/demo-site.png)
+
+When you get to the “Verify requirements” step, you will probably get a warning about PHP OPcode caching not being enabled.  We’re not going to do this, because we specifically don’t want our website to behave well, for the purposes of the exercise.
 
 Everything else should be all fine - there should be no other warnings or errors.  (If there are, please let me know!  I’d like to improve this guide.)
 
@@ -168,9 +174,8 @@ The final step is to put in some details for the Drupal website.  You don’t ne
 There are a number of useful tools that you can use to debug this server. Let’s install them and you can read their man pages (or Google them) to see how to use each one.  The first line enables the “Extra Packages for Enterprise Linux” package repository so that we can access the packages.
 
 ```
-`sudo amazon-linux-extras install epel
+sudo amazon-linux-extras install epel
 sudo yum install sysstat atop htop iotop
-`
 ```
 
 The `sysstat` package installs several tools that may or may not be of interest.  You can see which ones it installed by running `rpm -ql sysstat` and seeing what files are in the `/usr/bin` directory.
