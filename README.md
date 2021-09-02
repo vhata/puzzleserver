@@ -1,5 +1,7 @@
 # How to set up a puzzle EC2 instance
 
+This guide is for creating a small server that appears to be having performance issues, so that you can practice debugging and using command-line debugging tools.
+
 ## Setting up the server
 
 Amazon allows you to run small servers for free. You can learn more about it [here](https://aws.amazon.com/free/).
